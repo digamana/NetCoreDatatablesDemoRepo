@@ -1,0 +1,38 @@
+﻿@model WebApplication1.Models.Device
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="thisModalLabel"></h5>
+        <button type="button" class="btn btn-sm" data-dismiss="modal" aria-label="Close">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+    </div>
+    
+    <form asp-action="Edit" asp-controller="Home" method="post">
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.ItemName, new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.ItemName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ItemName, "", new { @class = "text-danger " })
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.ItemDescription, new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.ItemDescription, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">儲存</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        </div>
+
+    </form >
+     
+</div>
+ 
